@@ -3,13 +3,13 @@ import java.awt.*;
 
 public class GameBoard extends JPanel {
 
-    char[] Board = {'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n', 'n'};
+    Tile[] tiles = new Tile[9];
 
     public GameBoard() {
         this.setPreferredSize(new Dimension(600, 600));
         this.setBackground(Color.BLACK);
         this.setLayout(new GridLayout(3, 3));
-        Tile[] tiles = new Tile[9];
+
         for(int i = 0; i < 9; i++)
         {
             tiles[i] = new Tile();
@@ -19,40 +19,39 @@ public class GameBoard extends JPanel {
     }
 
 
-    public char checkWin(char player, int tileWon)
+    public char checkWin(char player)
     {
         char result = 'n';
-        Board[tileWon] = player;
 
-        if (Board[0] == player && Board[1] == player && Board[2] == player)
+        if (tiles[0].claim == player && tiles[1].claim == player && tiles[2].claim == player)
         {
             result = player;
         }
-        else if (Board[3] == player && Board[4] == player && Board[5] == player)
+        else if (tiles[3].claim == player && tiles[4].claim == player && tiles[5].claim == player)
         {
             result = player;
         }
-        else if (Board[6] == player && Board[7] == player && Board[8] == player)
+        else if (tiles[6].claim == player && tiles[7].claim == player && tiles[8].claim == player)
         {
             result = player;
         }
-        else if (Board[0] == player && Board[3] == player && Board[6] == player)
+        else if (tiles[0].claim == player && tiles[3].claim == player && tiles[6].claim == player)
         {
             result = player;
         }
-        else if (Board[1] == player && Board[4] == player && Board[7] == player)
+        else if (tiles[1].claim == player && tiles[4].claim == player && tiles[7].claim == player)
         {
             result = player;
         }
-        else if (Board[2] == player && Board[5] == player && Board[8] == player)
+        else if (tiles[2].claim == player && tiles[5].claim == player && tiles[8].claim == player)
         {
             result = player;
         }
-        else if (Board[0] == player && Board[4] == player && Board[8] == player)
+        else if (tiles[0].claim == player && tiles[4].claim == player && tiles[8].claim == player)
         {
             result = player;
         }
-        else if (Board[2] == player && Board[4] == player && Board[6] == player)
+        else if (tiles[2].claim == player && tiles[4].claim == player && tiles[6].claim == player)
         {
             result = player;
         }

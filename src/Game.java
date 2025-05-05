@@ -1,4 +1,4 @@
-import javax.swing.*;
+import javax.swing.JFrame;
 
 public class Game extends JFrame {
 
@@ -8,12 +8,9 @@ public class Game extends JFrame {
 
         mainMenu menu = new mainMenu();
 
-        this.add(gameBoard);
+        this.add(gameBoard); //TODO: make game swap between JPanels
 
-
-
-
-        // prompt user "who is player 1?"
+        // prompt user "who will go first??"
         //give them option to click x or o and typer their names into textboxes
 
 
