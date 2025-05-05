@@ -8,22 +8,13 @@ public class GameBoard extends JPanel {
     public GameBoard() {
         this.setPreferredSize(new Dimension(600, 600));
         this.setBackground(Color.BLACK);
-
+        this.setLayout(new GridLayout(3, 3));
         Tile[] tiles = new Tile[9];
-
         for(int i = 0; i < 9; i++)
         {
             tiles[i] = new Tile();
-        }
-
-        for(int i = 0; i < 9; i++)
-        {
             this.add(tiles[i]);
         }
-
-
-
-
 
     }
 
